@@ -50,20 +50,24 @@ render() {
       <Entity primitive="a-camera" look-controls>
         <Entity
         primitive="a-cursor"
-        cursor={{ fuse: false }}
+        cursor={{ fuse: true, fuseTimeout: 500 }}
         material={{ color: 'white', shader: 'flat', opacity: 0.75 }}
-        geometry={{ radiusInner: 0.005, radiusOuter: 0.007 }}
+        geometry={{ radiusInner: 0.005, radiusOuter: 0.009 }}
+		
         event-set__1={{
           _event: 'mouseenter',
           scale: { x: 1.4, y: 1.4, z: 1.4 }
         }}
+		
         event-set__1={{
           _event: 'mouseleave',
           scale: { x: 1, y: 1, z: 1 }
         }}
+		
         raycaster="objects: .clickable"
-        />
+	  />
       </Entity>
+
       <Entity
         lowpoly={{
           color: COLORS[this.state.colorIndex],
@@ -72,6 +76,11 @@ render() {
           wireframe: true
         }}
 
+		event-set__enter={{
+			_event: 'mouseenter',
+		  click: this._handleClick.bind(this)
+		}}
+		
         animation__oscillate={{
           property: 'position',
           dur: 2000,
@@ -88,7 +97,7 @@ render() {
 
         animation__rotate={{
           property: 'rotation',
-          dur: 30000,
+          dur: 15000,
           easing: 'linear',
           loop: true,
           to: { x: 0, y: 180, z: 0 }
@@ -106,7 +115,7 @@ render() {
       />
       
       <Entity text={{value:'Virtual Multiverse.',side:'double',align:'center',tabSize:3.99}} scale="25 25 25" position={this.state.textPosition} />
-      <Entity text={{value:'Press the Sphere to Change the Environment',side:'double',align:'center',tabSize:3.99}} scale="10 10 10" position={this.state.btmtextPosition} />      
+      <Entity text={{value:'Hover the Sphere to Change the Environment',side:'double',align:'center',tabSize:3.99}} scale="10 10 10" position={this.state.btmtextPosition} />      
       <Entity
         primitive="a-light"
         type="directional"

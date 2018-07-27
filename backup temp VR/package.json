@@ -1,14 +1,15 @@
 {
-  "name": "Virtual-Multiverse",
-  "description": "An Example of possibilites with webvr, aframe",
+  "name": "A-Frame-Preact",
+  "description": "A boilerplate project for getting started with WebVR using A-Frame and Preact",
   "private": true,
-  "author": "designtack",
-  "homepage": "https://dwivedithedev.github.io/VirtualMultiverseWebVR",
-  "version": "0.0.1",
-  "repository": "https://github.com/dwivedithedev/VirtualMultiverseWebVR",
+  "author": "Prayash Thapa",
+  "homepage": "http://effulgence.io/",
+  "version": "1.0.0",
+  "repository": "https://github.com/prayasht/aframe-preact-starter/",
   "scripts": {
     "start": "brunch watch --server",
-    "build": "brunch build --production"
+    "build": "brunch build --production",
+    "deploy": "ghpages -d public"
   },
   "dependencies": {
     "aframe": "^0.6.0",
@@ -29,7 +30,5 @@
     "clean-css-brunch": "^2",
     "ghpages": "0.0.3",
     "uglify-js-brunch": "^2"
-  },
-  "main": "index.js",
-  "license": "MIT"
+  }
 }
