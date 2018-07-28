@@ -8,8 +8,7 @@
   "repository": "https://github.com/dwivedithedev/VirtualMultiverseWebVR",
   "scripts": {
     "start": "brunch watch --server",
-    "build": "brunch build --production",
-	"deploy": "./bin/deploy.sh"
+    "build": "brunch build --production"
   },
   "dependencies": {
     "aframe": "^0.6.0",
